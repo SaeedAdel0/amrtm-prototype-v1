@@ -16,23 +16,27 @@
   backdrop.className='modal-backdrop';
   backdrop.innerHTML = `
     <div class="modal" role="dialog" aria-modal="true">
-      <div class="modal-header"><strong class="modal-title">Title</strong><button class="btn close-modal">✕</button></div>
+      <div class="modal-header">
+        <strong class="modal-title">Title</strong>
+        <button class="btn close-modal text-on-surface-variant hover:text-primary" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">✕</button>
+      </div>
       <div class="modal-body"></div>
       <div class="modal-footer"></div>
     </div>`;
   document.body.appendChild(backdrop);
+  
   const modal = backdrop.querySelector('.modal');
   const modalTitle = backdrop.querySelector('.modal-title');
   const modalBody = backdrop.querySelector('.modal-body');
   const modalFooter = backdrop.querySelector('.modal-footer');
   backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) closeModal(); });
   backdrop.querySelector('.close-modal').addEventListener('click', closeModal);
+  
   function openModal({title='', body='', footer=''}){
     modalTitle.textContent = title;
     modalBody.innerHTML = body||'';
-    modalFooter.innerHTML = footer||'<button class="btn close-modal">Close</button>';
+    modalFooter.innerHTML = footer||'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إغلاق</button>';
     backdrop.classList.add('show');
-    // wire close buttons inside footer
     backdrop.querySelectorAll('.close-modal').forEach(b=>b.addEventListener('click', closeModal));
   }
   function closeModal(){ backdrop.classList.remove('show'); }
@@ -48,47 +52,48 @@
     openModal({
       title:'التنقل بين الصفحات',
       body:`<div style="display:flex;flex-direction:column;gap:10px">
-        <a class="btn primary" href="Profile.html">بروفايل الاستشاري</a>
-        <a class="btn primary" href="Homepage.html">الصفحة الرئيسية</a>
-        <a class="btn primary" href="Dashboard.html">لوحة التسجيل</a>
+        <a class="bg-primary text-white text-center py-2 rounded-xl hover:bg-opacity-90" href="Profile.html">بروفايل الاستشاري</a>
+        <a class="bg-primary text-white text-center py-2 rounded-xl hover:bg-opacity-90" href="Homepage.html">الصفحة الرئيسية</a>
+        <a class="bg-primary text-white text-center py-2 rounded-xl hover:bg-opacity-90" href="Dashboard.html">لوحة التسجيل</a>
       </div>`,
-      footer:'<button class="btn close-modal">إغلاق</button>'
+      footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إغلاق</button>'
     });
   });
 
   // Page specific wiring
   function wireProfile(){
-    // Add Contact & Book buttons dynamically near top of page
     const hero = document.querySelector('main section');
     if(hero){
       const wrap = document.createElement('div'); wrap.style.marginTop='12px'; wrap.style.display='flex'; wrap.style.justifyContent='center'; wrap.style.gap='12px';
-      const contact = document.createElement('button'); contact.className='btn'; contact.textContent='Contact Us';
-      const book = document.createElement('button'); book.className='btn primary'; book.textContent='Book Consultation';
+      const contact = document.createElement('button'); contact.className='bg-surface border border-gray-200 px-4 py-2 rounded-xl text-primary font-bold hover:bg-gray-50'; contact.textContent='تواصل معنا';
+      const book = document.createElement('button'); book.className='bg-[#D6B56E] text-white px-4 py-2 rounded-xl font-bold shadow-md hover:bg-[#c5a45d]'; book.textContent='احجز استشارتك';
       wrap.appendChild(contact); wrap.appendChild(book); hero.appendChild(wrap);
+      
       contact.addEventListener('click', ()=>{
-        openModal({title:'Contact Us', body:`<div><label>Name</label><input id="contact_name" class="input" placeholder="Full name" /><div id="contact_name_err" class="error"></div><label style="margin-top:8px">Email</label><input id="contact_email" class="input" placeholder="you@example.com" /><div id="contact_email_err" class="error"></div><label style="margin-top:8px">Message</label><textarea id="contact_message" class="input" rows="4" placeholder="How can we help?"></textarea><div id="contact_msg_err" class="error"></div></div>`, footer:`<button class="btn close-modal">Cancel</button><button class="btn primary" id="contact_send">Send</button>`});
+        openModal({title:'تواصل معنا', body:`<div class="flex flex-col gap-3"><label>الاسم</label><input id="contact_name" class="input" placeholder="الاسم الكامل" /><div id="contact_name_err" class="error"></div><label>البريد الإلكتروني</label><input id="contact_email" class="input" placeholder="you@example.com" /><div id="contact_email_err" class="error"></div><label>الرسالة</label><textarea id="contact_message" class="input" rows="4" placeholder="كيف يمكننا مساعدتك؟"></textarea><div id="contact_msg_err" class="error"></div></div>`, footer:`<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إلغاء</button><button class="bg-primary text-white px-4 py-2 rounded-xl" id="contact_send">إرسال</button>`});
         setTimeout(()=>{
           const send = document.getElementById('contact_send');
           send.addEventListener('click', ()=>{
             const n = document.getElementById('contact_name'); const e = document.getElementById('contact_email'); const m = document.getElementById('contact_message');
             let ok=true; document.getElementById('contact_name_err').textContent=''; document.getElementById('contact_email_err').textContent=''; document.getElementById('contact_msg_err').textContent='';
-            if(!isValidName(n.value)){ document.getElementById('contact_name_err').textContent='Enter a valid name (letters only, min 3 chars)'; ok=false}
-            if(!isValidEmail(e.value)){ document.getElementById('contact_email_err').textContent='Enter a valid email'; ok=false}
-            if(!m.value.trim()){ document.getElementById('contact_msg_err').textContent='Message cannot be empty'; ok=false}
-            if(ok){ closeModal(); openModal({title:'Sent', body:'Your message was sent (mock).', footer:'<button class="btn close-modal">Close</button>'}); }
+            if(!isValidName(n.value)){ document.getElementById('contact_name_err').textContent='أدخل اسماً صحيحاً (أحرف فقط، 3 أحرف كحد أدنى)'; ok=false}
+            if(!isValidEmail(e.value)){ document.getElementById('contact_email_err').textContent='أدخل بريد إلكتروني صحيح'; ok=false}
+            if(!m.value.trim()){ document.getElementById('contact_msg_err').textContent='الرسالة لا يمكن أن تكون فارغة'; ok=false}
+            if(ok){ closeModal(); openModal({title:'تم الإرسال', body:'تم إرسال رسالتك بنجاح (محاكاة).', footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إغلاق</button>'}); }
           });
         },30);
       });
+
       book.addEventListener('click', ()=>{
-        openModal({title:'Book Consultation', body:`<div><label>Name</label><input id="book_name" class="input" placeholder="Full name" /><div id="book_name_err" class="error"></div><label style="margin-top:8px">Phone</label><input id="book_phone" class="input" placeholder="0501234567" /><div id="book_phone_err" class="error"></div><label style="margin-top:8px">Email</label><input id="book_email" class="input" placeholder="you@example.com" /><div id="book_email_err" class="error"></div></div>`, footer:'<button class="btn close-modal">Cancel</button><button class="btn primary" id="book_send">Confirm</button>'});
+        openModal({title:'حجز استشارة', body:`<div class="flex flex-col gap-3"><label>الاسم</label><input id="book_name" class="input" placeholder="الاسم الكامل" /><div id="book_name_err" class="error"></div><label>الهاتف</label><input id="book_phone" class="input" placeholder="0501234567" /><div id="book_phone_err" class="error"></div><label>البريد الإلكتروني</label><input id="book_email" class="input" placeholder="you@example.com" /><div id="book_email_err" class="error"></div></div>`, footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إلغاء</button><button class="bg-primary text-white px-4 py-2 rounded-xl" id="book_send">تأكيد الحجز</button>'});
         setTimeout(()=>{
           document.getElementById('book_send').addEventListener('click', ()=>{
             const n=document.getElementById('book_name'), p=document.getElementById('book_phone'), e=document.getElementById('book_email');
             let ok=true; ['book_name_err','book_phone_err','book_email_err'].forEach(id=>document.getElementById(id).textContent='');
-            if(!isValidName(n.value)){ document.getElementById('book_name_err').textContent='Valid name required'; ok=false }
-            if(!isValidPhone(p.value)){ document.getElementById('book_phone_err').textContent='Valid phone (numbers only)'; ok=false }
-            if(!isValidEmail(e.value)){ document.getElementById('book_email_err').textContent='Valid email'; ok=false }
-            if(ok){ closeModal(); openModal({title:'Booked', body:'Consultation booked (mock).', footer:'<button class="btn close-modal">Close</button>'}); }
+            if(!isValidName(n.value)){ document.getElementById('book_name_err').textContent='الاسم مطلوب'; ok=false }
+            if(!isValidPhone(p.value)){ document.getElementById('book_phone_err').textContent='رقم الهاتف غير صحيح (أرقام فقط)'; ok=false }
+            if(!isValidEmail(e.value)){ document.getElementById('book_email_err').textContent='بريد إلكتروني غير صحيح'; ok=false }
+            if(ok){ closeModal(); openModal({title:'تم الحجز', body:'تم حجز الاستشارة بنجاح (محاكاة).', footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إغلاق</button>'}); }
           });
         },30);
       });
@@ -99,41 +104,36 @@
       const stars = Array.from(container.querySelectorAll('.material-symbols-outlined'));
       stars.forEach((s,i)=>{
         s.classList.add('star');
-        s.addEventListener('mouseenter', ()=>{ for(let k=0;k<=i;k++) stars[k].classList.add('hovered');});
-        s.addEventListener('mouseleave', ()=>{ stars.forEach(x=>x.classList.remove('hovered'));});
-        s.addEventListener('click', ()=>{ stars.forEach((x,idx)=> x.classList.toggle('hovered', idx<=i)); });
+        s.style.cursor = 'pointer';
+        s.addEventListener('mouseenter', ()=>{ for(let k=0;k<=i;k++) { stars[k].classList.add('hovered'); stars[k].style.fontVariationSettings = "'FILL' 1"; }});
+        s.addEventListener('mouseleave', ()=>{ stars.forEach((x, idx)=>{ x.classList.remove('hovered'); if(!x.classList.contains('selected')) x.style.fontVariationSettings = "'FILL' 0"; });});
+        s.addEventListener('click', ()=>{ 
+            stars.forEach(x=>{ x.classList.remove('selected'); x.style.fontVariationSettings = "'FILL' 0"; }); 
+            for(let k=0;k<=i;k++){ stars[k].classList.add('selected'); stars[k].style.fontVariationSettings = "'FILL' 1"; }
+        });
       });
     });
   }
 
   function wireHomepage(){
-    // Make consultant cards clickable to view profile
-    document.querySelectorAll('.grid .rounded-xl').forEach(card=>{
+    document.querySelectorAll('.grid .rounded-xl, .consultant-cards .group').forEach(card=>{
       card.style.cursor='pointer';
       card.addEventListener('click', (e)=>{
-        // ignore clicks on buttons/links inside card
         if(e.target.closest('button')||e.target.closest('a')) return;
         window.location.href='Profile.html';
       });
     });
-    // Advanced search modal trigger: any element with search icon
     document.querySelectorAll('span.material-symbols-outlined').forEach(el=>{
       if(el.textContent.trim()==='search') el.addEventListener('click', ()=>{
-        openModal({title:'Advanced Search', body:`<div class="form-row"><div class="col"><label>Specialty</label><select class="input" id="adv_spec"><option value="">Any</option><option>Business Strategy</option><option>Finance</option><option>Leadership</option></select></div><div class="col"><label>Max Price (SAR)</label><input id="adv_price" class="input" placeholder="e.g. 1000" /></div></div>`, footer:'<button class="btn close-modal">Cancel</button><button class="btn primary" id="adv_apply">Apply</button>'});
-        setTimeout(()=>{document.getElementById('adv_apply').addEventListener('click', ()=>{ closeModal(); openModal({title:'Filters Applied', body:'(Mock) Filters applied.', footer:'<button class="btn close-modal">Close</button>'}); });},20);
+        openModal({title:'بحث متقدم', body:`<div class="flex flex-col gap-4"><div><label class="block mb-2">التخصص</label><select class="input" id="adv_spec"><option value="">الكل</option><option>استراتيجية الأعمال</option><option>المالية</option><option>القيادة</option></select></div><div><label class="block mb-2">أقصى سعر (ر.س)</label><input id="adv_price" class="input" placeholder="مثال: 1000" /></div></div>`, footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إلغاء</button><button class="bg-primary text-white px-4 py-2 rounded-xl" id="adv_apply">تطبيق</button>'});
+        setTimeout(()=>{document.getElementById('adv_apply').addEventListener('click', ()=>{ closeModal(); openModal({title:'تم التطبيق', body:'تم تطبيق عوامل التصفية (محاكاة).', footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إغلاق</button>'}); });},20);
       });
     });
   }
 
   function wireDashboard(){
     const navLinks = document.querySelectorAll('nav a');
-    const reg = document.querySelector('form');
-    const schedule = document.querySelectorAll('.time-slot');
-    // If schedule slots absent, create them (small fallback)
-    if(!schedule.length){
-      const container = document.querySelector('.glass-panel + .glass-panel') || document.querySelector('main');
-      // nothing to do if not found
-    }
+    
     // Side nav wiring: show/hide main sections
     navLinks.forEach(a=>{
       a.addEventListener('click', (e)=>{
@@ -141,47 +141,56 @@
         const sections = { 'لوحة التحكم': 'both', 'حسابي':'form', 'مواعيدي':'schedule', 'التوفر':'schedule', 'التقارير':'reports' };
         const show = sections[txt]||'both';
         const formEl = document.querySelector('form');
-        const schedEl = document.querySelectorAll('.glass-panel')[1];
+        const schedEl = document.querySelectorAll('.glass-panel')[1] || document.querySelectorAll('section')[1];
         if(formEl) formEl.parentElement.style.display = (show==='form' || show==='both')? 'block':'none';
         if(schedEl) schedEl.style.display = (show==='schedule' || show==='both')? 'block':'none';
-        // create reports dummy
+        
         let rpt = document.getElementById('reports_dummy');
         if(show==='reports'){
-          if(!rpt){ rpt = document.createElement('div'); rpt.id='reports_dummy'; rpt.className='glass-panel rounded-xl p-6 md:p-8 mb-8'; rpt.innerHTML='<h2>Reports (mock)</h2><p>Sample reports go here.</p>'; document.querySelector('main').appendChild(rpt); }
+          if(!rpt){ 
+              rpt = document.createElement('div'); 
+              rpt.id='reports_dummy'; 
+              rpt.className='bg-surface border border-border shadow-sm rounded-xl p-6 md:p-8 mb-8 mt-8'; 
+              rpt.innerHTML='<h2 class="font-bold text-primary text-xl mb-4">التقارير (محاكاة)</h2><p class="text-on-surface-variant">ستظهر تقارير الأداء والمبيعات هنا.</p>'; 
+              document.querySelector('main').appendChild(rpt); 
+          }
           rpt.style.display='block';
-        } else if(rpt) rpt.style.display='none';
+        } else if(rpt) {
+            rpt.style.display='none';
+        }
       });
     });
 
     // Registration form validation on Save
-    const saveBtn = document.querySelector('button.bg-primary');
+    const saveBtn = document.querySelector('button.bg-primary') || document.querySelector('button[type="submit"]');
     if(saveBtn){
-      saveBtn.addEventListener('click', ()=>{
+      saveBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
         const name = document.querySelector('input[placeholder="الاسم"]');
-        const phone = document.querySelector('input[type="tel"]');
-        const email = document.querySelector('input[type="email"]');
+        const phone = document.querySelector('input[type="tel"]') || document.querySelector('input[placeholder="رقم الهاتف"]');
+        const email = document.querySelector('input[type="email"]') || document.querySelector('input[placeholder="البريد الإلكتروني"]');
         const license = Array.from(document.querySelectorAll('input[type="text"]')).find(i=>i.placeholder.includes('الترخيص')||i.placeholder.includes('license') );
         const bio = document.querySelector('textarea');
         let ok=true; let msgs=[];
-        if(!name || !isValidName(name.value)){ ok=false; msgs.push('Name invalid'); }
-        if(!phone || !isValidPhone(phone.value)){ ok=false; msgs.push('Phone invalid'); }
-        if(!email || !isValidEmail(email.value)){ ok=false; msgs.push('Email invalid'); }
-        if(!license || !isValidLicense(license.value)){ ok=false; msgs.push('License invalid'); }
-        if(!bio || !bio.value.trim()){ ok=false; msgs.push('Bio required'); }
-        if(!ok){ openModal({title:'Validation Failed', body:`<ul>${msgs.map(m=>`<li>${m}</li>`).join('')}</ul>`, footer:'<button class="btn close-modal">Close</button>'}); }
-        else{ openModal({title:'Success', body:'Information saved (mock).', footer:'<button class="btn close-modal">Close</button>'}); }
+        if(!name || !isValidName(name.value)){ ok=false; msgs.push('الاسم غير صحيح (يجب أن يحتوي على أحرف فقط)'); }
+        if(!phone || !isValidPhone(phone.value)){ ok=false; msgs.push('رقم الهاتف غير صحيح'); }
+        if(!email || !isValidEmail(email.value)){ ok=false; msgs.push('البريد الإلكتروني غير صحيح'); }
+        if(!license || !isValidLicense(license.value)){ ok=false; msgs.push('رقم الترخيص غير صحيح (أرقام فقط)'); }
+        if(!bio || !bio.value.trim()){ ok=false; msgs.push('النبذة المختصرة مطلوبة'); }
+        if(!ok){ openModal({title:'فشل التحقق', body:`<ul style="list-style:disc; padding-right:20px;">${msgs.map(m=>`<li>${m}</li>`).join('')}</ul>`, footer:'<button class="bg-gray-200 px-4 py-2 rounded-xl close-modal">إغلاق</button>'}); }
+        else{ openModal({title:'تم الحفظ', body:'تم حفظ المعلومات بنجاح (محاكاة).', footer:'<button class="bg-primary text-white px-4 py-2 rounded-xl close-modal">إغلاق</button>'}); }
       });
     }
 
-    // Schedule slot booking
-    document.querySelectorAll('.time-slot').forEach(slot=>{
-      slot.addEventListener('click', ()=>{
-        if(slot.classList.contains('reserved')){
-          openModal({title:'Cancel Slot?', body:`Cancel this reserved slot? <div style="margin-top:12px"><strong>${slot.textContent.trim()}</strong></div>`, footer:'<button class="btn close-modal">Close</button><button class="btn" id="cancel_slot">Cancel Slot</button>'});
-          setTimeout(()=>{ document.getElementById('cancel_slot').addEventListener('click', ()=>{ slot.classList.remove('reserved'); closeModal(); }); },20);
-        } else {
-          openModal({title:'Book Slot', body:`Book this slot?<div style="margin-top:12px"><strong>${slot.textContent.trim()}</strong></div>`, footer:'<button class="btn close-modal">No</button><button class="btn primary" id="confirm_slot">Yes, Book</button>'});
-          setTimeout(()=>{ document.getElementById('confirm_slot').addEventListener('click', ()=>{ slot.classList.add('reserved'); closeModal(); }); },20);
+    // Schedule slot toggle (تفعيل الأيام المحددة لتصبح زرقاء مباشرة بدون نافذة منبثقة)
+    document.querySelectorAll('.time-slot').forEach(slot => {
+      slot.addEventListener('click', function() {
+        // التبديل بين التحديد والإلغاء (إضافة كلاس selected)
+        this.classList.toggle('selected');
+        
+        // إزالة الشفافية (opacity-50) إذا كانت موجودة وتم تحديد المربع
+        if(this.classList.contains('selected')) {
+            this.classList.remove('opacity-50');
         }
       });
     });
@@ -190,8 +199,8 @@
   // Initialize per page by title detection
   document.addEventListener('DOMContentLoaded', ()=>{
     const t = document.title || '';
-    if(/الملف الشخصي|Profile/.test(t)) wireProfile();
-    if(/اختر مجال|Choose|AmrTM/.test(t) || /اختر/.test(t)) wireHomepage();
-    if(/Dashboard|لوحة التحكم|تسجيل المستشار/.test(t)) wireDashboard();
+    if(/الملف الشخصي|Profile/.test(t) || document.querySelector('.star-rating')) wireProfile();
+    if(/اختر مجال|Choose|AmrTM/.test(t) || /اختر/.test(t) || /الصفحة الرئيسية/.test(t)) wireHomepage();
+    if(/Dashboard|لوحة التحكم|تسجيل المستشار/.test(t) || document.querySelector('form')) wireDashboard();
   });
 })();

@@ -1,346 +1,214 @@
-<!DOCTYPE html>
-
-<html class="dark" dir="rtl" lang="ar"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>صفحة تسجيل الاستشاري - AmrTM</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>صفحة تسجيل الاستشاري - AmrTM</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+    
+    <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-background": "#e1e3e4",
-                      "on-tertiary-fixed": "#091b39",
-                      "outline-variant": "#4e4639",
-                      "on-secondary": "#233148",
-                      "inverse-surface": "#e1e3e4",
-                      "on-error": "#690005",
-                      "primary-container": "#c5a059",
-                      "tertiary": "#b6c6ed",
-                      "surface-container-low": "#191c1d",
-                      "error-container": "#93000a",
-                      "surface-container": "#1d2021",
-                      "secondary-fixed": "#d6e3ff",
-                      "on-tertiary": "#20304f",
-                      "on-primary-fixed": "#261900",
-                      "inverse-on-surface": "#2e3132",
-                      "primary": "#e9c176",
-                      "on-primary": "#412d00",
-                      "surface-bright": "#373a3b",
-                      "surface-container-high": "#282a2b",
-                      "inverse-primary": "#775a19",
-                      "surface": "#111415",
-                      "tertiary-fixed-dim": "#b6c6ed",
-                      "on-primary-container": "#4e3700",
-                      "surface-variant": "#323536",
-                      "surface-container-lowest": "#0c0f10",
-                      "on-tertiary-fixed-variant": "#374767",
-                      "on-secondary-container": "#abb9d6",
-                      "secondary-container": "#3c4962",
-                      "on-tertiary-container": "#2b3b5a",
-                      "surface-tint": "#e9c176",
-                      "primary-fixed": "#ffdea5",
-                      "secondary": "#b9c7e4",
-                      "secondary-fixed-dim": "#b9c7e4",
-                      "tertiary-container": "#95a5ca",
-                      "background": "#111415",
-                      "surface-dim": "#111415",
-                      "on-secondary-fixed": "#0d1c32",
-                      "error": "#ffb4ab",
-                      "on-secondary-fixed-variant": "#39475f",
-                      "outline": "#9a8f80",
-                      "on-primary-fixed-variant": "#5d4201",
-                      "on-surface": "#e1e3e4",
-                      "on-error-container": "#ffdad6",
-                      "tertiary-fixed": "#d8e2ff",
-                      "surface-container-highest": "#323536",
-                      "on-surface-variant": "#d1c5b4",
-                      "primary-fixed-dim": "#e9c176"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "margin-mobile": "20px",
-                      "gutter": "24px",
-                      "margin-desktop": "80px",
-                      "unit": "8px",
-                      "max-width": "1280px"
-              },
-              "fontFamily": {
-                      "body-lg": ["IBM Plex Sans"],
-                      "body-md": ["IBM Plex Sans"],
-                      "headline-sm": ["IBM Plex Serif"],
-                      "display-lg-mobile": ["IBM Plex Serif"],
-                      "label-sm": ["IBM Plex Sans"],
-                      "display-lg": ["IBM Plex Serif"],
-                      "label-md": ["IBM Plex Sans"],
-                      "headline-md": ["IBM Plex Serif"],
-                      "headline-lg": ["IBM Plex Serif"],
-                      "headline-lg-mobile": ["IBM Plex Serif"]
-              },
-              "fontSize": {
-                      "label-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "28px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "display-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-md": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#f8fafc',
+                        surface: '#ffffff',
+                        primary: '#1e3a8a',
+                        'primary-hover': '#1e40af',
+                        'on-surface': '#0f172a',
+                        'on-surface-variant': '#475569',
+                        border: '#e2e8f0',
+                        white: '#ffffff',
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            600: '#475569',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
         }
-      </script>
-<style>
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
-            background-color: theme('colors.background');
-            color: theme('colors.on-background');
-        }
-        
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        /* Glassmorphism utilities */
-        .glass-panel {
-            background: rgba(25, 28, 29, 0.6); /* surface-container-low with opacity */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(154, 143, 128, 0.2); /* outline with low opacity */
-        }
-      </style>
+    </script>
 </head>
-<link rel="stylesheet" href="styles.css">
-<body class="min-h-screen bg-background text-on-background flex font-body-md">
+<body class="min-h-screen bg-background text-on-surface flex font-body-md">
 
-
-<header class="fixed top-0 left-0 right-0 h-16 bg-surface/80 backdrop-blur-md z-50 flex items-center justify-between px-6 border-b border-outline-variant/30 hidden md:flex">
-<div class="flex items-center gap-4">
-<button class="bg-surface-variant text-on-surface-variant hover:text-primary px-4 py-2 rounded-full border border-outline-variant/50 transition-colors font-label-md">
-                تسجيل الخروج
-            </button>
-<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline/30">
-<span class="material-symbols-outlined text-on-surface-variant text-2xl">person</span>
-</div>
-</div>
-<a href="index.html" class="font-display-lg text-headline-md font-bold text-primary flex items-center gap-2">
-<svg class="text-primary" fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2L2 22H22L12 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
-<path d="M12 10L7 20H17L12 10Z" fill="currentColor"></path>
-</svg>
-                        AmrTM
-</a>
+<header class="fixed top-0 left-0 right-0 h-16 bg-surface border border-border shadow-sm z-50 flex items-center justify-between px-6 hidden md:flex">
+    <div class="flex items-center gap-4">
+        <button class="bg-surface text-on-surface hover:text-primary px-4 py-2 rounded-full border border-border transition-colors font-label-md">
+            تسجيل الخروج
+        </button>
+        <div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center overflow-hidden border border-border">
+            <span class="material-symbols-outlined text-on-surface-variant text-2xl">person</span>
+        </div>
+    </div>
+    <a href="index.html" class="font-display-lg text-headline-md font-bold text-primary flex items-center gap-2">
+        <svg class="text-primary" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 22H22L12 2Z" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+            <path d="M12 10L7 20H17L12 10Z" fill="currentColor"></path>
+        </svg>
+        AmrTM
+    </a>
 </header>
 
-<nav class="hidden md:flex flex-col h-screen w-64 fixed right-0 top-0 bg-secondary-container dark:bg-surface-container-high border-l border-outline-variant/20 shadow-lg py-unit z-40 mt-16 pt-6">
-<div class="flex flex-col flex-1 gap-2 mt-4">
-
-<a class="bg-primary text-on-primary rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out hover:bg-white/5" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-                                صفحة تسجيل الاستشاري
-                        </a>
-<a class="text-on-surface-variant hover:bg-surface-variant/50 rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
-<span class="material-symbols-outlined">person</span>
-                حسابي
-            </a>
-<a class="text-on-surface-variant hover:bg-surface-variant/50 rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
-<span class="material-symbols-outlined">calendar_today</span>
-                مواعيدي
-            </a>
-<a class="text-on-surface-variant hover:bg-surface-variant/50 rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
-<span class="material-symbols-outlined">event_available</span>
-                التوفر
-            </a>
-<a class="text-on-surface-variant hover:bg-surface-variant/50 rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
-<span class="material-symbols-outlined">analytics</span>
-                التقارير
-            </a>
-</div>
-<div class="mt-auto mb-4">
-<a class="text-on-surface-variant hover:bg-surface-variant/50 rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
-<span class="material-symbols-outlined">settings</span>
-                إعدادات
-            </a>
-</div>
+<nav class="hidden md:flex flex-col h-screen w-64 fixed right-0 top-0 bg-surface border border-border shadow-sm py-unit z-40 mt-16 pt-6">
+    <div class="flex flex-col flex-1 gap-2 mt-4">
+        <a class="bg-primary text-white rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out hover:bg-primary-hover" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+            صفحة تسجيل الاستشاري
+        </a>
+        <a class="text-on-surface-variant hover:bg-background rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
+            <span class="material-symbols-outlined">person</span>
+            حسابي
+        </a>
+        <a class="text-on-surface-variant hover:bg-background rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
+            <span class="material-symbols-outlined">calendar_today</span>
+            مواعيدي
+        </a>
+        <a class="text-on-surface-variant hover:bg-background rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
+            <span class="material-symbols-outlined">event_available</span>
+            التوفر
+        </a>
+        <a class="text-on-surface-variant hover:bg-background rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
+            <span class="material-symbols-outlined">analytics</span>
+            التقارير
+        </a>
+    </div>
+    <div class="mt-auto mb-4">
+        <a class="text-on-surface-variant hover:bg-background rounded-xl mx-2 flex items-center gap-3 p-3 font-label-md transition-all duration-300 ease-in-out" href="#">
+            <span class="material-symbols-outlined">settings</span>
+            إعدادات
+        </a>
+    </div>
 </nav>
 
 <main class="flex-1 w-full md:mr-64 mt-16 p-4 md:p-8 lg:p-12 overflow-y-auto">
 
-<section class="glass-panel rounded-xl p-6 md:p-8 mb-8 shadow-sm">
-<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-8 text-right">
-                تسجيل المستشار &amp; لوحة التحكم
-            </h1>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="block text-right text-label-md text-on-surface-variant">الاسم</label>
-<input class="w-full bg-surface-container-highest/50 border border-outline/30 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-right" dir="rtl" placeholder="الاسم" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="block text-right text-label-md text-on-surface-variant">رقم الهاتف</label>
-<div class="flex" dir="ltr">
-<select class="bg-surface-container-highest/50 border border-outline/30 rounded-l-lg px-3 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors border-r-0">
-<option>+966</option>
-</select>
-<input class="flex-1 bg-surface-container-highest/50 border border-outline/30 rounded-r-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-right" dir="rtl" placeholder="رقم الهاتف" type="tel"/>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="block text-right text-label-md text-on-surface-variant">البريد الإلكتروني</label>
-<input class="w-full bg-surface-container-highest/50 border border-outline/30 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-right" dir="rtl" placeholder="البريد الإلكتروني" type="email"/>
-</div>
-<div class="space-y-2">
-<label class="block text-right text-label-md text-on-surface-variant">رقم الترخيص</label>
-<div class="flex items-center gap-4">
-<input class="flex-1 bg-surface-container-highest/50 border border-outline/30 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-right" dir="rtl" placeholder="رقم الترخيص" type="text"/>
-</div>
-</div>
-</div>
-<div class="space-y-2">
-<label class="block text-right text-label-md text-on-surface-variant">نبذة مختصرة</label>
-<textarea class="w-full bg-surface-container-highest/50 border border-outline/30 rounded-lg px-4 py-3 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-right resize-y" dir="rtl" placeholder="نبذة مختصرة" rows="4"></textarea>
-</div>
+    <section class="bg-surface border border-border shadow-sm rounded-xl p-6 md:p-8 mb-8">
+        <h1 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-8 text-right">
+            تسجيل المستشار &amp; لوحة التحكم
+        </h1>
+        <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="block text-right text-label-md text-on-surface-variant">الاسم</label>
+                    <input class="w-full bg-background border border-border text-on-surface focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3" dir="rtl" placeholder="الاسم" type="text"/>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-right text-label-md text-on-surface-variant">رقم الهاتف</label>
+                    <div class="flex" dir="ltr">
+                        <select class="bg-background border border-border text-on-surface focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 border-r-0">
+                            <option>+966</option>
+                        </select>
+                        <input class="flex-1 bg-background border border-border text-on-surface focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3" dir="rtl" placeholder="رقم الهاتف" type="tel"/>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="block text-right text-label-md text-on-surface-variant">البريد الإلكتروني</label>
+                    <input class="w-full bg-background border border-border text-on-surface focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3" dir="rtl" placeholder="البريد الإلكتروني" type="email"/>
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-right text-label-md text-on-surface-variant">رقم الترخيص</label>
+                    <div class="flex items-center gap-4">
+                        <input class="flex-1 bg-background border border-border text-on-surface focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3" dir="rtl" placeholder="رقم الترخيص" type="text"/>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-right text-label-md text-on-surface-variant">نبذة مختصرة</label>
+                <textarea class="w-full bg-background border border-border text-on-surface focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 resize-y" dir="rtl" placeholder="نبذة مختصرة" rows="4"></textarea>
+            </div>
+            <div class="flex justify-start">
+                <button class="bg-primary text-white font-label-md py-3 px-8 rounded-full hover:bg-primary-hover transition-colors shadow-sm font-semibold mt-4" type="button">
+                    حفظ المعلومات
+                </button>
+            </div>
+        </form>
+    </section>
 
-<div class="flex justify-start">
-<button class="bg-primary text-on-primary font-label-md py-3 px-8 rounded-full hover:bg-primary-fixed transition-colors shadow-sm font-semibold mt-4" type="button">
-                        حفظ المعلومات
+    <section class="bg-surface border border-border shadow-sm rounded-xl p-6 md:p-8">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <button class="bg-surface text-on-surface hover:text-primary px-4 py-2 rounded-lg border border-border transition-colors font-label-md flex items-center gap-2">
+                    تعطيل الحالي
+                </button>
+                <div class="flex gap-1">
+                    <button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center border border-border hover:border-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">chevron_right</span>
                     </button>
-</div>
-</form>
-</section>
-
-<section class="glass-panel rounded-xl p-6 md:p-8 shadow-sm">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-<div class="flex items-center gap-2 mb-4 md:mb-0">
-<button class="bg-surface-variant text-on-surface-variant hover:text-primary px-4 py-2 rounded-lg border border-outline-variant/50 transition-colors font-label-md flex items-center gap-2">
-                        تعطيل الحالي
+                    <button class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center border border-border hover:border-primary transition-colors">
+                        <span class="material-symbols-outlined text-sm">chevron_left</span>
                     </button>
-<div class="flex gap-1">
-<button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline/30 hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-sm">chevron_right</span>
-</button>
-<button class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center border border-outline/30 hover:border-primary transition-colors">
-<span class="material-symbols-outlined text-sm">chevron_left</span>
-</button>
-</div>
-</div>
-<div class="text-right">
-<h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-1">جدولة التوفر</h2>
-<p class="text-body-md text-on-surface-variant">الأسبوع الحالي، السبوت، وحالي 2023</p>
-</div>
-</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <h2 class="font-headline-md text-headline-md font-bold text-on-surface mb-1">جدولة التوفر</h2>
+                <p class="text-body-md text-on-surface-variant">الأسبوع الحالي</p>
+            </div>
+        </div>
 
-<div class="w-full overflow-x-auto">
-<div class="min-w-[800px]">
-
-<div class="grid grid-cols-4 gap-4 mb-4 text-center border-b border-outline-variant/30 pb-4">
-<div class="font-label-md text-on-surface-variant">الأحد</div>
-<div class="font-label-md text-on-surface-variant">الإثنين</div>
-<div class="font-label-md text-on-surface-variant">الثلاثاء</div>
-<div class="font-label-md text-on-surface-variant">الأربعاء</div>
-</div>
-
-<div class="space-y-3">
-<div class="grid grid-cols-4 gap-4">
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface">
-                                9:00 ص - 10:00 ص
-                            </div>
-<div class="bg-tertiary-container/30 border border-tertiary-container/50 rounded-lg p-3 text-center text-sm text-on-surface">
-                                9:00 ص - 10:00 ص
-                            </div>
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface">
-                                9:00 ص - 10:00 ص
-                            </div>
-<div class="bg-tertiary-container/30 border border-tertiary-container/50 rounded-lg p-3 text-center text-sm text-on-surface">
-                                9:00 ص - 10:00 ص
-                            </div>
-</div>
-<div class="grid grid-cols-4 gap-4">
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface">
-                                10:00 ص - 11:00 ص
-                            </div>
-<div class="bg-tertiary-container/30 border border-tertiary-container/50 rounded-lg p-3 text-center text-sm text-on-surface">
-                                10:00 ص - 11:00 ص
-                            </div>
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface">
-                                10:00 ص - 11:00 ص
-                            </div>
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface opacity-50">
-                                10:00 ص - 11:00 ص
-                            </div>
-</div>
-<div class="grid grid-cols-4 gap-4">
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface">
-                                11:00 ص - 12:00 م
-                            </div>
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface opacity-50">
-                                11:00 ص - 12:00 م
-                            </div>
-<div class="bg-tertiary-container/30 border border-tertiary-container/50 rounded-lg p-3 text-center text-sm text-on-surface">
-                                11:00 ص - 12:00 م
-                            </div>
-<div class="bg-surface-container-highest border border-outline/30 rounded-lg p-3 text-center text-sm text-on-surface">
-                                11:00 ص - 12:00 م
-                            </div>
-</div>
-</div>
-</div>
-</div>
-</section>
+        <div class="w-full overflow-x-auto">
+            <div class="min-w-[800px]">
+                <div class="grid grid-cols-4 gap-4 mb-4 text-center border-b border-border pb-4">
+                    <div class="font-label-md text-on-surface-variant">الأحد</div>
+                    <div class="font-label-md text-on-surface-variant">الإثنين</div>
+                    <div class="font-label-md text-on-surface-variant">الثلاثاء</div>
+                    <div class="font-label-md text-on-surface-variant">الأربعاء</div>
+                </div>
+                <div class="space-y-3">
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            9:00 ص - 10:00 ص
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            9:00 ص - 10:00 ص
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            9:00 ص - 10:00 ص
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            9:00 ص - 10:00 ص
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            10:00 ص - 11:00 ص
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            10:00 ص - 11:00 ص
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            10:00 ص - 11:00 ص
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface opacity-50 select-none">
+                            10:00 ص - 11:00 ص
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            11:00 ص - 12:00 م
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface opacity-50 select-none">
+                            11:00 ص - 12:00 م
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            11:00 ص - 12:00 م
+                        </div>
+                        <div class="time-slot bg-surface border border-border rounded-lg p-3 text-center text-sm text-on-surface select-none">
+                            11:00 ص - 12:00 م
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
-</body></html>
 <script src="script.js" defer></script>
+</body>
+</html>

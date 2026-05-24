@@ -5,37 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>اختر مستشارك - AmrTM</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1E3A8A",
+            "on-primary": "#FFFFFF",
+            secondary: "#60A5FA",
+            "secondary-container": "#DBEAFE",
+            background: "#F8FAFC",
+            surface: "#FFFFFF",
+            "surface-container": "#FFFFFF",
+            "surface-container-low": "#F1F5F9",
+            "surface-container-high": "#E2E8F0",
+            "surface-container-highest": "#FFFFFF",
+            "surface-lowest": "#F8FAFC",
+            "surface-variant": "#E2E8F0",
+            "on-background": "#1E293B",
+            "on-surface": "#1E293B",
+            "on-surface-variant": "#475569",
+            "outline-variant": "#CBD5E1",
+            tertiary: "#60A5FA",
+            "tertiary-container": "#BFDBFE",
+            "secondary-fixed": "#BFDBFE",
+            "secondary-fixed-dim": "#E0F2FE",
+            "primary-fixed": "#1E40AF",
+            "primary-fixed-dim": "#93C5FD",
+            error: "#EF4444",
+            "error-container": "#FEE2E2",
+            "inverse-primary": "#E0E7FF",
+            "surface-bright": "#FFFFFF",
+            "surface-dim": "#E2E8F0"
+          },
+          fontFamily: {
+            body: ["IBM Plex Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="styles.css">
   <style>
-    :root{--gold:#e9c176;--bg:#0c0f10;--panel:#111415;--muted:#cfc6b3}
-    body{background:linear-gradient(180deg,#070707 0%, #0f1112 100%);font-family: 'IBM Plex Sans', sans-serif;color:#fff}
-    .card{background:rgba(17,20,21,0.55);backdrop-filter:blur(8px);border:1px solid rgba(233,193,107,0.08)}
-    .btn-gold{background:linear-gradient(90deg,var(--gold),#ffdea5);color:#111;padding:12px 22px;border-radius:12px;font-weight:600;box-shadow:0 6px 18px rgba(233,193,107,0.12);transition:transform .18s ease,box-shadow .18s ease}
-    .btn-gold:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(233,193,107,0.22)}
-    .btn-ghost{border:1px solid rgba(255,255,255,0.06);padding:10px 18px;border-radius:10px;background:transparent;color:var(--muted);transition:all .15s}
-    .btn-ghost:hover{background:rgba(255,255,255,0.03);color:#fff;transform:translateY(-2px)}
-    a.btn{display:inline-block;text-decoration:none}
+    :root { --primary: #1E3A8A; --accent: #60A5FA; --bg: #F8FAFC; --panel: #FFFFFF; --muted: #475569; }
+    body { background: var(--bg); font-family: 'IBM Plex Sans', sans-serif; color: #1E293B; }
+    .card { background: rgba(255,255,255,0.75); backdrop-filter: blur(16px); border: 1px solid rgba(148,163,184,0.35); box-shadow: 0 16px 40px rgba(15,23,42,0.08); }
+    .btn-primary { background: linear-gradient(90deg,#1E3A8A,#2563EB); color: #fff; padding: 12px 22px; border-radius: 12px; font-weight: 600; box-shadow: 0 10px 24px rgba(30,58,138,0.18); transition: transform .18s ease, box-shadow .18s ease; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(30,58,138,0.24); }
+    .btn-ghost { border: 1px solid #CBD5E1; padding: 10px 18px; border-radius: 10px; background: transparent; color: var(--muted); transition: all .15s; }
+    .btn-ghost:hover { background: rgba(148,163,184,0.16); color: #1E293B; transform: translateY(-2px); }
+    a.btn { display: inline-block; text-decoration: none; }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-6">
+<body class="min-h-screen flex items-center justify-center p-6 bg-background text-on-background">
   <main class="max-w-3xl w-full text-center space-y-6">
     <section class="card p-10 rounded-2xl">
       <div class="mb-6">
         <img src="img/index_img.png" alt="صورة اختيار المستشار" class="mx-auto w-full max-w-lg h-auto rounded-xl object-cover" />
       </div>
-      <h1 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
+      <h1 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4 text-on-background">
         هذا نموذج لتطوير صفحة 'اختر مستشارك' اتمنى ينال اعجابكم
       </h1>
-      <p class="text-sm text-on-surface-variant mb-6" style="color:rgba(255,255,255,0.78)">
+      <p class="text-sm text-on-surface-variant mb-6" style="color:rgba(30,41,59,0.78)">
         ملاحظة: هذا نموذج و اللغة البرمجية المكتوبه مبسطه فقط لمشاركة النتيجة النهائية للصفحة مع نموذج لصفحة لوحة التحكم و صفحة بروفايل الاستشاري
       </p>
       <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a class="btn btn-gold" href="homepage.html">الصفحة الرئيسية</a>
+        <a class="btn btn-primary" href="homepage.html">الصفحة الرئيسية</a>
         <a class="btn btn-ghost" href="profile.html">بروفايل الاستشاري</a>
         <a class="btn btn-ghost" href="dashboard.html">لوحة التحكم</a>
       </div>
     </section>
-    <footer class="text-sm text-on-surface-variant text-center mt-4" style="color:rgba(255,255,255,0.6)">
+    <footer class="text-sm text-on-surface-variant text-center mt-4" style="color:rgba(30,41,59,0.6)">
       Saeed Adel Alkatheri
     </footer>
   </main>
