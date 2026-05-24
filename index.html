@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اختر مستشارك - AmrTM</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--gold:#e9c176;--bg:#0c0f10;--panel:#111415;--muted:#cfc6b3}
+    body{background:linear-gradient(180deg,#070707 0%, #0f1112 100%);font-family: 'IBM Plex Sans', sans-serif;color:#fff}
+    .card{background:rgba(17,20,21,0.55);backdrop-filter:blur(8px);border:1px solid rgba(233,193,107,0.08)}
+    .btn-gold{background:linear-gradient(90deg,var(--gold),#ffdea5);color:#111;padding:12px 22px;border-radius:12px;font-weight:600;box-shadow:0 6px 18px rgba(233,193,107,0.12);transition:transform .18s ease,box-shadow .18s ease}
+    .btn-gold:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(233,193,107,0.22)}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);padding:10px 18px;border-radius:10px;background:transparent;color:var(--muted);transition:all .15s}
+    .btn-ghost:hover{background:rgba(255,255,255,0.03);color:#fff;transform:translateY(-2px)}
+    a.btn{display:inline-block;text-decoration:none}
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <main class="max-w-3xl w-full text-center space-y-6">
+    <section class="card p-10 rounded-2xl">
+      <div class="mb-6">
+        <img src="img/index_img.png" alt="صورة اختيار المستشار" class="mx-auto w-full max-w-lg h-auto rounded-xl object-cover" />
+      </div>
+      <h1 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
+        هذا نموذج لتطوير صفحة 'اختر مستشارك' اتمنى ينال اعجابكم
+      </h1>
+      <p class="text-sm text-on-surface-variant mb-6" style="color:rgba(255,255,255,0.78)">
+        ملاحظة: هذا نموذج و اللغة البرمجية المكتوبه مبسطه فقط لمشاركة النتيجة النهائية للصفحة مع نموذج لصفحة لوحة التحكم و صفحة بروفايل الاستشاري
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a class="btn btn-gold" href="homepage.html">الصفحة الرئيسية</a>
+        <a class="btn btn-ghost" href="profile.html">بروفايل الاستشاري</a>
+        <a class="btn btn-ghost" href="dashboard.html">لوحة التحكم</a>
+      </div>
+    </section>
+    <footer class="text-sm text-on-surface-variant text-center mt-4" style="color:rgba(255,255,255,0.6)">
+      Saeed Adel Alkatheri
+    </footer>
+  </main>
+</body>
+</html>

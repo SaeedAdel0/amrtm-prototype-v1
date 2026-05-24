@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الصفحة الرئيسية - AmrTM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e1e3e4",
+                        "on-tertiary-fixed": "#091b39",
+                        "outline-variant": "#4e4639",
+                        "on-secondary": "#233148",
+                        "inverse-surface": "#e1e3e4",
+                        "on-error": "#690005",
+                        "primary-container": "#c5a059",
+                        "tertiary": "#b6c6ed",
+                        "surface-container-low": "#191c1d",
+                        "error-container": "#93000a",
+                        "surface-container": "#1d2021",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-tertiary": "#20304f",
+                        "on-primary-fixed": "#261900",
+                        "inverse-on-surface": "#2e3132",
+                        "primary": "#e9c176",
+                        "on-primary": "#412d00",
+                        "surface-bright": "#373a3b",
+                        "surface-container-high": "#282a2b",
+                        "inverse-primary": "#775a19",
+                        "surface": "#111415",
+                        "tertiary-fixed-dim": "#b6c6ed",
+                        "on-primary-container": "#4e3700",
+                        "surface-variant": "#323536",
+                        "surface-container-lowest": "#0c0f10",
+                        "on-tertiary-fixed-variant": "#374767",
+                        "on-secondary-container": "#abb9d6",
+                        "secondary-container": "#3c4962",
+                        "on-tertiary-container": "#2b3b5a",
+                        "surface-tint": "#e9c176",
+                        "primary-fixed": "#ffdea5",
+                        "secondary": "#b9c7e4",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "tertiary-container": "#95a5ca",
+                        "background": "#111415",
+                        "surface-dim": "#111415",
+                        "on-secondary-fixed": "#0d1c32",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "outline": "#9a8f80",
+                        "on-primary-fixed-variant": "#5d4201",
+                        "on-surface": "#e1e3e4",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#d8e2ff",
+                        "surface-container-highest": "#323536",
+                        "on-surface-variant": "#d1c5b4",
+                        "primary-fixed-dim": "#e9c176"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "unit": "8px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "headline-sm": ["IBM Plex Serif"],
+                        "display-lg-mobile": ["IBM Plex Serif"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "display-lg": ["IBM Plex Serif"],
+                        "label-md": ["IBM Plex Sans"],
+                        "headline-md": ["IBM Plex Serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<link rel="stylesheet" href="styles.css">
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-background border-b border-outline-variant/15">
+<nav class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-max-width mx-auto">
+        <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary flex items-center">
+                AmrTM
+            </a>
+<ul class="hidden md:flex space-x-8 space-x-reverse items-center">
+<li>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">الصفحة الرئيسية</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">دراسات الحالة</a>
+</li>
+<li>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors duration-200" href="#">من نحن</a>
+</li>
+</ul>
+<div class="flex items-center space-x-4 space-x-reverse">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 flex items-center justify-center p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded transition-transform active:scale-95">
+                    Login
+                </button>
+</div>
+</nav>
+</header>
+<main class="flex-grow">
+
+<section class="w-full bg-surface-lowest py-[120px] relative overflow-hidden flex flex-col items-center justify-center px-4">
+<div class="absolute inset-0 bg-gradient-to-b from-background to-surface-container opacity-50 z-0 pointer-events-none"></div>
+<div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">اختر مجال استشارتك</h1>
+<div class="flex items-center gap-8 mb-12 text-on-surface-variant font-body-lg text-body-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">groups</span>
+<span>500+ خبير</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">forum</span>
+<span>10k+ جلسة</span>
+</div>
+</div>
+<div class="w-full max-w-2xl relative">
+<span class="material-symbols-outlined absolute right-6 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary rounded-full py-4 pr-14 pl-6 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant transition-all outline-none shadow-sm" placeholder="ابحث عن تخصص، مهارة، أو مستشار..." type="text"/>
+<button class="absolute left-2 top-1/2 -translate-y-1/2 bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-full hover:bg-primary-fixed transition-colors">
+                        بحث
+                    </button>
+</div>
+</div>
+</section>
+
+<section class="w-full px-4 md:px-8 py-[100px] bg-background">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-md text-headline-md text-on-surface">أعلى المستشارين تقييمًا</h2>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                    عرض الكل
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+</button>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-6 w-full">
+
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/15 hover:bg-surface-container-high transition-colors duration-300 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-primary transition-all p-1">
+<img alt="صورة المستشار" class="w-full h-full object-cover rounded-full" data-alt="Professional headshot of a mature Middle Eastern male business consultant in a sharply tailored dark navy suit and crisp white shirt. He is smiling confidently in a high-end corporate office setting with subtle warm gold accent lighting in the blurred background. The overall aesthetic is luxurious, trustworthy, and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxJ8dVeg_vOol1oYDSXqQXOXOPaEeexQ-Vas8StcSbY3f5bhUdIEaOLim5uKip3FEjToS2iLaV2evKqazo3OLnmtMmiyrrPegQQAEAwe-J7ljs7iFgGqlvBwRy_vuQDHcAST8_XdAMTy_zETSC3hQzTSKwhK3Zc9eRIHrb1SMSFqvZNF6ctyLHpt-amoCWX5KhHIQlYOMTczuXlc187NCGPp1Mwy-1qKs0QSzg0EmBWCxzWx-FH9Gjb_LzHn5GGmDl-NC3H0Eq4fc"/>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-3 py-1 rounded-full mb-3 uppercase tracking-wider">استراتيجية الأعمال</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">أحمد محمود</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">مستشار تنفيذي سابق بخبرة 20 عاماً</p>
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">(124)</span>
+</div>
+<button class="w-full mt-auto border border-primary text-primary font-label-md text-label-md rounded px-6 py-3 hover:bg-primary/10 transition-colors">
+                        عرض الملف الشخصي
+                    </button>
+</div>
+
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/15 hover:bg-surface-container-high transition-colors duration-300 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-primary transition-all p-1">
+<img alt="صورة المستشار" class="w-full h-full object-cover rounded-full" data-alt="Elegant corporate portrait of a confident Middle Eastern female financial advisor wearing a sleek dark blazer over a silk blouse. She is positioned against a modern, deep navy architectural backdrop with subtle light flares. The lighting highlights her professional demeanor, evoking a sense of wealth management expertise and elite consulting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhWZ-WnTvJKxIOdThznYGJ7lrWuHxlrrzGQzFz6yaL6WT32j9TG2_vR01xDzmj0gG26hyJEfsm471xWdAXmgDbRnrlScNIhNJjyBkuLqMGW5ZDDivF7xnA7pKvhbMO9esARw_x6lsdy8zlT-KTjZoSS02chDxbZoL91ZmOI7vx97SYPHIvomLQkAmKkZc-wfq4FC2ZOHAldT-acgZMU7z5_75F2PNYUtbM4nXoGYJwEcU2JpzJMls5hWHfH6Zu6bknRJCyJTjjo1E"/>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-3 py-1 rounded-full mb-3 uppercase tracking-wider">المالية والاستثمار</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">سارة عبد الله</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">خبير إدارة الثروات والتحليل المالي</p>
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star_half</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">(89)</span>
+</div>
+<button class="w-full mt-auto border border-primary text-primary font-label-md text-label-md rounded px-6 py-3 hover:bg-primary/10 transition-colors">
+                        عرض الملف الشخصي
+                    </button>
+</div>
+
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/15 hover:bg-surface-container-high transition-colors duration-300 flex flex-col items-center text-center group cursor-pointer">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-primary transition-all p-1">
+<img alt="صورة المستشار" class="w-full h-full object-cover rounded-full" data-alt="Sophisticated portrait of a distinguished older male executive coach with silver hair, wearing a tailored charcoal suit and a subtle gold tie pin. He stands in a dimly lit, luxurious boardroom with deep navy leather chairs in the background. The mood is highly authoritative, scholarly, and aligned with premium executive counseling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnKiSaTIvpgBkUwlcFP_mPX2XxULKGvOgIpPVlUv6H1ApC7jjk5g2KWmOCB4UH1WZYgtyFiaAUPwUio4Bevdy5ZQJgBBmGBFmeFZXEWyz8L3NWEaDNfxs2Vn6PYtgP1pYMDVM8_RQQ7vMybQEcXlVCocJbEaGbeuvk10l_2Dmfx1XHLPfJug2Lu1n217uGLz_OTGlMKJsUV7Ljq3oNYCM4lvAcyyHX9ulLrUnyakrRv3x8PRbfiPRuENsSLODV1nnfvQOjLdBanLY"/>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-3 py-1 rounded-full mb-3 uppercase tracking-wider">التطوير القيادي</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">د. عمر الفاروق</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">مدرب تنفيذي لكبار القادة</p>
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">(210)</span>
+</div>
+<button class="w-full mt-auto border border-primary text-primary font-label-md text-label-md rounded px-6 py-3 hover:bg-primary/10 transition-colors">
+                        عرض الملف الشخصي
+                    </button>
+</div>
+
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/15 hover:bg-surface-container-high transition-colors duration-300 flex flex-col items-center text-center group cursor-pointer hidden lg:flex">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-primary transition-all p-1">
+<img alt="صورة المستشار" class="w-full h-full object-cover rounded-full" data-alt="Modern corporate portrait of a sharp young female tech consultant wearing a minimal black turtleneck. The lighting is dramatic and moody, utilizing deep shadows and crisp highlights to convey intellect and innovation. The background is an abstract, blurred dark gradient with subtle hints of gold circuitry or network patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3LK_ZasaRKEsCx0oDZrlp937RnIQKup4FtFi3kauZ9AzyH6T2_8NRVMj-6McBqCep-9ZALye3W7cC0anWGjg5NyEfQUejTrVQNDIRPcurFAqJMc-pdCZyZlByWcVEjCNI3t0YMr31Mipxmj5FrR-FjmeKrY5IdkDOu1cso_YU1JXD9sT85WL7n9RpZXdqdS1jF3oqCJJNsFvNGJCGTz75QibqbwlMQC-BWIVI1oeLlPjukrCAM3slGsERj4mZQJTPFcsBMd3X3I"/>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-3 py-1 rounded-full mb-3 uppercase tracking-wider">التحول الرقمي</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">نورة السعد</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">مهندسة استراتيجيات رقمية</p>
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">(95)</span>
+</div>
+<button class="w-full mt-auto border border-primary text-primary font-label-md text-label-md rounded px-6 py-3 hover:bg-primary/10 transition-colors">
+                        عرض الملف الشخصي
+                    </button>
+</div>
+
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/15 hover:bg-surface-container-high transition-colors duration-300 flex flex-col items-center text-center group cursor-pointer hidden 2xl:flex">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-transparent group-hover:border-primary transition-all p-1">
+<img alt="صورة المستشار" class="w-full h-full object-cover rounded-full" data-alt="Professional profile image of a focused male legal consultant in a classic dark grey suit. He is looking directly at the camera with a calm, decisive expression. The setting is a prestigious law library at night, with dark wooden bookshelves softly illuminated by ambient golden desk lamps, creating a solemn and highly secure atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaesxQr1jBy08Xi1lMoM_8T7L7QgcwpCa5RYYVWhELm8fWfDivWcB17Am8At07Ui-dBjtAyf53TZ2ObKcNi4-9FojtPcznckw2wk7N33NfnsFSuP_BPv8fC3B2wlD-GuBS6T-tgoeAEU6aSVDg9_39tvxXCvKTokVKkTV449IqJyO4QgY10DcJiSdHBLF6zRRaFFLGYxvX80XoWxB-U8AMHXK7vqua6MPVSKBBHXSlmVTOa91IH7ZytCCHfZQGV_9XdavdT2nGXbw"/>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary px-3 py-1 rounded-full mb-3 uppercase tracking-wider">الاستشارات القانونية</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">طارق زيدان</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">مستشار قانوني للشركات</p>
+<div class="flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-primary text-lg">star</span>
+<span class="material-symbols-outlined text-primary text-lg">star_border</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-2">(54)</span>
+</div>
+<button class="w-full mt-auto border border-primary text-primary font-label-md text-label-md rounded px-6 py-3 hover:bg-primary/10 transition-colors">
+                        عرض الملف الشخصي
+                    </button>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-12 w-full max-w-max-width mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary mb-6 md:mb-0">
+                AmrTM
+            </div>
+<ul class="flex flex-wrap justify-center gap-6 md:gap-8 font-label-md text-label-md">
+<li>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact Support</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Global Offices</a>
+</li>
+</ul>
+<div class="mt-6 md:mt-0 font-label-md text-label-md text-on-surface-variant">
+                © 2024 AmrTM Consulting. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
+<script src="script.js" defer></script>
